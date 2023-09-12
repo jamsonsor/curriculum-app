@@ -16,6 +16,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'docker build -f curriculum-front/Dockerfile -t jamson93/curriculum-front:latest .'
+        sh 'docker build -f curriculum-back/Dockerfile -t jamson93/curriculum-back:latest .'
       }
     }
 
@@ -32,6 +33,7 @@ pipeline {
     stage('Push') {
       steps {
         sh 'docker push jamson93/curriculum-front:latest'
+        sh 'docker push jamson93/curriculum-back:latest'
       }
     }
 
