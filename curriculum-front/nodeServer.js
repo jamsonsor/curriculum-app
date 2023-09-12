@@ -12,6 +12,7 @@ http.createServer((req, res) => {
   fs.readFile(fileToRead, 'utf-8', (err, content) => {
     if (err) {
       console.log(`Unable to open ${fileToRead} file.`)
+      console.log('Try running "npm run serve" instead.')
     }
     res.end(content)
   })
